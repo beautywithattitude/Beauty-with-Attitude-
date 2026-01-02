@@ -17,19 +17,22 @@
       color:#f5f5f5;
       text-align:center;
     }
-    .container{max-width:420px;margin:0 auto;padding:32px 20px 60px;}
-    .logo{margin-top:40px;margin-bottom:18px;}
-    .logo img{width:120px;height:auto;display:block;margin:0 auto;filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));}
-    h1{font-weight:600;margin:0 0 8px;}
-    .tagline{font-size:.95rem;opacity:.85;margin-bottom:28px;}
+    .container{max-width:420px;margin:0 auto;padding:34px 20px 64px;}
+    .logo{margin-top:34px;margin-bottom:16px;}
+    .logo img{
+      width:130px;height:auto;display:block;margin:0 auto;
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,.35));
+    }
+    h1{font-weight:700;margin:0 0 8px;letter-spacing:.2px;}
+    .tagline{font-size:.98rem;opacity:.88;margin-bottom:26px;}
     a.button{
       display:block;
       background: linear-gradient(135deg,#d4af37,#b8962e);
       color:#000;
       text-decoration:none;
-      padding:16px;
+      padding:16px 16px;
       border-radius:14px;
-      font-weight:700;
+      font-weight:750;
       margin:14px 0;
     }
     a.secondary{
@@ -38,8 +41,14 @@
       border:1px solid #d4af37;
       font-weight:650;
     }
-    .section{margin-top:26px;font-size:.92rem;opacity:.92;line-height:1.65;}
-    footer{margin-top:38px;font-size:.82rem;opacity:.6;}
+    .section{
+      margin-top:24px;
+      font-size:.94rem;
+      opacity:.92;
+      line-height:1.65;
+    }
+    .small{opacity:.78;font-size:.9rem;}
+    footer{margin-top:40px;font-size:.82rem;opacity:.6;}
   </style>
 </head>
 
@@ -47,12 +56,12 @@
   <div class="container">
 
     <div class="logo">
-      <!-- If you don’t have a logo uploaded yet, it will just not show (but the page will still load). -->
+      <!-- Logo file must be named exactly: bwa-logo.png -->
       <img src="bwa-logo.png" alt="Beauty With Attitude Logo" onerror="this.style.display='none'">
     </div>
 
     <h1>Beauty With Attitude</h1>
-    <div class="tagline">Personalised care · Limited appointments</div>
+    <div class="tagline">Muscle Therapy · Beauty Treatments</div>
 
     <a class="button" href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">
       Request an Appointment
@@ -62,15 +71,8 @@
       Message on WhatsApp
     </a>
 
-    <div class="section">
-      <strong>Hours:</strong><br>
-      11:00am – 3:00pm<br>
-      Maximum of 2–3 clients per day
-    </div>
-
-    <div class="section">
-      Due to medical limitations, appointments are offered by request only.<br>
-      This allows me to personally confirm the best time for you.
+    <div class="section small">
+      Appointments are by request so I can confirm the best available time for you.
     </div>
 
     <footer>© Beauty With Attitude</footer>
