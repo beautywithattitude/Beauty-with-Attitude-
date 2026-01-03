@@ -37,4 +37,107 @@
     }
 
     .tagline {
-      margin: 8px 0 20px
+      margin: 8px 0 20px;
+      color: #cfcfcf;
+      font-size: 18px;
+    }
+
+    .card {
+      background: #111;
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+
+    a.button {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      margin: 12px 0;
+      border-radius: 14px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .primary {
+      background: linear-gradient(180deg, #d6a63a, #b8892b);
+      color: #111;
+    }
+
+    .outline {
+      border: 1px solid #d6a63a;
+      color: #ffffff;
+    }
+
+    .outline:hover {
+      background: rgba(214,166,58,0.15);
+    }
+
+    .note {
+      margin-top: 14px;
+      color: #bdbdbd;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- LOGO (keep filename exactly the same as your uploaded file) -->
+    <img src="logo.png" alt="Beauty With Attitude Logo" class="logo" />
+
+    <h1>Beauty With Attitude</h1>
+    <div class="tagline">Muscle Therapy · Beauty Treatments</div>
+
+    <div class="card">
+
+      <!-- ✅ GOOGLE FORM LINK -->
+      <a
+        class="button primary"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
+        target="_blank"
+      >
+        Request an Appointment
+      </a>
+
+      <!-- WhatsApp -->
+      <a
+        class="button outline"
+        href="https://wa.me/6421333030?text=Hi%20Beauty%20With%20Attitude%2C%20I’d%20like%20to%20request%20an%20appointment."
+        target="_blank"
+      >
+        Message on WhatsApp
+      </a>
+
+      <!-- Call -->
+      <a class="button outline" href="tel:+6421333030">
+        Call 021 333 030
+      </a>
+
+      <!-- Facebook -->
+      <a
+        class="button outline"
+        href="https://www.facebook.com/beautywithattitude.bwa"
+        target="_blank"
+      >
+        Visit Facebook Page
+      </a>
+
+      <div class="note">
+        Appointments are by request so I can confirm the best available time for you.
+      </div>
+
+      <footer>© Beauty With Attitude</footer>
+    </div>
+  </div>
+</body>
+</html>
