@@ -5,86 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Beauty With Attitude</title>
 
-  <meta name="theme-color" content="#0b0b0b" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="manifest.json" />
 
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #0b0b0b;
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+    :root { color-scheme: dark; }
+    body{
+      margin:0;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg,#0b0b0b,#1a1a1a);
+      color:#f5f5f5;
+      text-align:center;
     }
-
-    .container {
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
+    .container{
+      max-width:440px;
+      margin:0 auto;
+      padding:36px 20px 72px;
     }
-
-    img.logo {
-      width: 140px;
-      margin-bottom: 16px;
+    .logo{
+      margin-top:30px;
+      margin-bottom:14px;
     }
-
-    h1 {
-      margin: 0;
-      font-size: 36px;
+    .logo img{
+      width:130px;
+      height:auto;
+      display:block;
+      margin:0 auto;
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,.35));
     }
-
-    .tagline {
-      margin: 8px 0 20px;
-      color: #cfcfcf;
-      font-size: 18px;
+    h1{
+      margin:0 0 6px;
+      font-weight:750;
+      letter-spacing:.2px;
     }
-
-    .card {
-      background: #111;
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    .tagline{
+      font-size:.98rem;
+      opacity:.88;
+      margin-bottom:24px;
     }
-
-    a.button {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      margin: 12px 0;
-      border-radius: 14px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 700;
-      transition: 0.2s ease;
+    .btn{
+      display:block;
+      padding:16px;
+      margin:12px 0;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:750;
     }
-
-    .primary {
-      background: linear-gradient(180deg, #d6a63a, #b8892b);
-      color: #111;
+    .primary{
+      background: linear-gradient(135deg,#d4af37,#b8962e);
+      color:#000;
     }
-
-    .outline {
-      border: 1px solid #d6a63a;
-      color: #ffffff;
+    .secondary{
+      background: transparent;
+      color:#f5f5f5;
+      border:1px solid #d4af37;
+      font-weight:650;
     }
-
-    .outline:hover {
-      background: rgba(214,166,58,0.15);
+    .note{
+      margin-top:20px;
+      font-size:.92rem;
+      opacity:.86;
+      line-height:1.65;
     }
-
-    .note {
-      margin-top: 14px;
-      color: #bdbdbd;
-      font-size: 14px;
-    }
-
-    footer {
-      margin-top: 12px;
-      font-size: 12px;
-      color: #777;
+    footer{
+      margin-top:44px;
+      font-size:.82rem;
+      opacity:.6;
     }
   </style>
 </head>
@@ -92,52 +79,49 @@
 <body>
   <div class="container">
 
-    <!-- LOGO (keep filename exactly the same as your uploaded file) -->
-    <img src="logo.png" alt="Beauty With Attitude Logo" class="logo" />
+    <div class="logo">
+      <!-- LOGO FILE MUST BE NAMED EXACTLY: bwa-logo.png -->
+      <img src="bwa-logo.png"
+           alt="Beauty With Attitude Logo"
+           onerror="this.style.display='none'">
+    </div>
 
     <h1>Beauty With Attitude</h1>
     <div class="tagline">Muscle Therapy · Beauty Treatments</div>
 
-    <div class="card">
+    <!-- ✅ UPDATED GOOGLE FORM -->
+    <a class="btn primary"
+       href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
+       target="_blank" rel="noopener">
+      Request an Appointment
+    </a>
 
-      <!-- ✅ GOOGLE FORM LINK -->
-      <a
-        class="button primary"
-        href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
-        target="_blank"
-      >
-        Request an Appointment
-      </a>
+    <!-- WhatsApp -->
+    <a class="btn secondary"
+       href="https://wa.me/6421333030"
+       target="_blank" rel="noopener">
+      WhatsApp 021 333 030
+    </a>
 
-      <!-- WhatsApp -->
-      <a
-        class="button outline"
-        href="https://wa.me/6421333030?text=Hi%20Beauty%20With%20Attitude%2C%20I’d%20like%20to%20request%20an%20appointment."
-        target="_blank"
-      >
-        Message on WhatsApp
-      </a>
+    <!-- Facebook -->
+    <a class="btn secondary"
+       href="https://www.facebook.com/beautywithattitude.bwa"
+       target="_blank" rel="noopener">
+      Visit Facebook Page
+    </a>
 
-      <!-- Call -->
-      <a class="button outline" href="tel:+6421333030">
-        Call 021 333 030
-      </a>
-
-      <!-- Facebook -->
-      <a
-        class="button outline"
-        href="https://www.facebook.com/beautywithattitude.bwa"
-        target="_blank"
-      >
-        Visit Facebook Page
-      </a>
-
-      <div class="note">
-        Appointments are by request so I can confirm the best available time for you.
-      </div>
-
-      <footer>© Beauty With Attitude</footer>
+    <div class="note">
+      Appointments are by request so I can confirm the best available time for you.
     </div>
+
+    <footer>© Beauty With Attitude</footer>
+
   </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
 </body>
 </html>
