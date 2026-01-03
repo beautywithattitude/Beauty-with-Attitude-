@@ -10,93 +10,65 @@
 
   <style>
     :root { color-scheme: dark; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    body{
+      margin:0;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI",
                    Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(180deg, #0b0b0b, #1a1a1a);
-      color: #f5f5f5;
-      text-align: center;
+      background: linear-gradient(180deg,#0b0b0b,#1a1a1a);
+      color:#f5f5f5;
+      text-align:center;
     }
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 32px 16px 60px;
+    .container{
+      max-width:440px;
+      margin:0 auto;
+      padding:36px 20px 72px;
     }
-    .logo {
-      margin-top: 16px;
-      margin-bottom: 12px;
-    }
-    .logo img {
-      width: 130px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+    .logo{ margin-top:30px; margin-bottom:14px; }
+    .logo img{
+      width:130px;
+      height:auto;
+      display:block;
+      margin:0 auto;
       filter: drop-shadow(0 10px 22px rgba(0,0,0,.35));
     }
-    h1 {
-      margin: 6px 0 4px;
-      font-weight: 750;
-      letter-spacing: .2px;
+    h1{
+      margin:0 0 6px;
+      font-weight:750;
+      letter-spacing:.2px;
     }
-    .tagline {
-      font-size: .98rem;
-      opacity: .88;
-      margin-bottom: 18px;
+    .tagline{
+      font-size:.98rem;
+      opacity:.88;
+      margin-bottom:24px;
     }
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 12px;
+    .btn{
+      display:block;
+      padding:16px;
+      margin:12px 0;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:750;
     }
-    @media (min-width: 900px) {
-      .layout {
-        grid-template-columns: 1.3fr .7fr;
-      }
+    .primary{
+      background: linear-gradient(135deg,#d4af37,#b8962e);
+      color:#000;
     }
-    .card {
-      background: rgba(17,17,17,.75);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 16px;
-      padding: 14px;
-      box-shadow: 0 18px 50px rgba(0,0,0,.35);
-    }
-    .btn {
-      display: block;
-      padding: 14px;
-      margin: 10px 0;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 700;
-      color: #f5f5f5;
-      border: 1px solid #d4af37;
+    .secondary{
       background: transparent;
+      color:#f5f5f5;
+      border:1px solid #d4af37;
+      font-weight:650;
     }
-    .btn:hover {
-      background: rgba(212,175,55,.12);
+    .note{
+      margin-top:20px;
+      font-size:.92rem;
+      opacity:.86;
+      line-height:1.65;
     }
-    .note {
-      margin-top: 12px;
-      font-size: .92rem;
-      opacity: .86;
-      line-height: 1.55;
-    }
-    footer {
-      margin-top: 18px;
-      font-size: .82rem;
-      opacity: .6;
-    }
-    .formWrap {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.08);
-      background: #fff;
-    }
-    iframe {
-      width: 100%;
-      height: 980px;
-      border: 0;
+    footer{
+      margin-top:44px;
+      font-size:.82rem;
+      opacity:.6;
     }
   </style>
 </head>
@@ -105,7 +77,7 @@
   <div class="container">
 
     <div class="logo">
-      <!-- LOGO FILE MUST BE CALLED: bwa-logo.png -->
+      <!-- LOGO FILE MUST BE NAMED EXACTLY: bwa-logo.png -->
       <img src="bwa-logo.png"
            alt="Beauty With Attitude Logo"
            onerror="this.style.display='none'">
@@ -114,48 +86,32 @@
     <h1>Beauty With Attitude</h1>
     <div class="tagline">Muscle Therapy · Beauty Treatments</div>
 
-    <div class="layout">
+    <!-- ✅ NEW GOOGLE FORM LINK -->
+    <a class="btn primary"
+       href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
+       target="_blank" rel="noopener">
+      Request an Appointment
+    </a>
 
-      <!-- LEFT: GOOGLE FORM EMBED -->
-      <div class="card">
-        <div class="formWrap">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?embedded=true"
-            loading="lazy"
-            title="Beauty With Attitude Appointment Request">
-          </iframe>
-        </div>
+    <!-- WhatsApp -->
+    <a class="btn secondary"
+       href="https://wa.me/6421333030"
+       target="_blank" rel="noopener">
+      WhatsApp 021 333 030
+    </a>
 
-        <div class="note">
-          If the form does not load, you can open it directly here:
-          <br>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
-             target="_blank" rel="noopener"
-             style="color:#d4af37;">
-            Open appointment request form
-          </a>
-        </div>
-      </div>
+    <!-- Facebook -->
+    <a class="btn secondary"
+       href="https://www.facebook.com/beautywithattitude.bwa"
+       target="_blank" rel="noopener">
+      Visit Facebook Page
+    </a>
 
-      <!-- RIGHT: CONTACT -->
-      <div class="card">
-        <a class="btn" href="https://wa.me/6421333030" target="_blank" rel="noopener">
-          WhatsApp 021 333 030
-        </a>
-
-        <a class="btn" href="https://www.facebook.com/beautywithattitude.bwa"
-           target="_blank" rel="noopener">
-          Visit Facebook Page
-        </a>
-
-        <div class="note">
-          Appointments are by request so I can confirm the best available time for you.
-        </div>
-
-        <footer>© Beauty With Attitude</footer>
-      </div>
-
+    <div class="note">
+      Appointments are by request so I can confirm the best available time for you.
     </div>
+
+    <footer>© Beauty With Attitude</footer>
 
   </div>
 
