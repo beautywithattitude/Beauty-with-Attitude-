@@ -35,3 +35,93 @@
     }
     h1 {
       font-weight: 750;
+      margin: 0 0 6px;
+      letter-spacing: .2px;
+    }
+    .tagline {
+      font-size: .98rem;
+      opacity: .88;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: block;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 14px;
+      margin: 12px 0;
+      font-weight: 750;
+    }
+    .primary {
+      background: linear-gradient(135deg, #d4af37, #b8962e);
+      color: #000;
+    }
+    .secondary {
+      background: transparent;
+      color: #f5f5f5;
+      border: 1px solid #d4af37;
+      font-weight: 650;
+    }
+    .note {
+      margin-top: 22px;
+      font-size: .94rem;
+      opacity: .86;
+      line-height: 1.65;
+    }
+    footer {
+      margin-top: 48px;
+      font-size: .82rem;
+      opacity: .6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="logo">
+      <!-- Logo file must be named exactly: bwa-logo.png -->
+      <img src="bwa-logo.png" alt="Beauty With Attitude Logo" onerror="this.style.display='none'">
+    </div>
+
+    <h1>Beauty With Attitude</h1>
+    <div class="tagline">Muscle Therapy · Beauty Treatments</div>
+
+    <!-- Appointment Request -->
+    <a class="btn primary"
+       href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform"
+       target="_blank" rel="noopener">
+      Request an Appointment
+    </a>
+
+    <!-- WhatsApp -->
+    <a class="btn secondary" href="https://wa.me/6421333030" target="_blank" rel="noopener">
+      Message on WhatsApp
+    </a>
+
+    <!-- Call -->
+    <a class="btn secondary" href="tel:+6421333030">
+      Call 021 333 030
+    </a>
+
+    <!-- Facebook -->
+    <a class="btn secondary"
+       href="https://www.facebook.com/beautywithattitude.bwa"
+       target="_blank" rel="noopener">
+      Visit Facebook Page
+    </a>
+
+    <div class="note">
+      Appointments are by request so I can confirm the best available time for you.
+    </div>
+
+    <footer>© Beauty With Attitude</footer>
+
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
