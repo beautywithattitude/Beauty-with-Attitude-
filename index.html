@@ -1,116 +1,275 @@
-<section class="reviews">
-  <h2>What Clients Say ⭐⭐⭐⭐⭐</h2>
-  <p class="reviews-sub">Real feedback from Google Reviews</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beauty With Attitude</title>
 
-  <div class="review-grid">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="manifest.json">
 
-    <div class="review-card">
-      <p class="review-text">“I would just love to share my experiences with the most gorgeous kind, caring lady Aletta. Always warm, friendly and honest. Top job on an eye trio and a relaxing facial — left my skin looking and feeling great. Highly recommend Beauty With Attitude.”</p>
-      <p class="review-name">— Tori Lea</p>
+  <style>
+    :root { color-scheme: dark; }
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg,#0b0b0b,#1a1a1a);
+      color:#f5f5f5;
+      text-align:center;
+    }
+
+    .container{
+      max-width:440px;
+      margin:0 auto;
+      padding:32px 18px 70px;
+    }
+
+    .logo img{
+      width:130px;
+      margin:20px auto 10px;
+      display:block;
+      filter:drop-shadow(0 10px 22px rgba(0,0,0,.35));
+    }
+
+    h1{
+      margin:6px 0 4px;
+      font-weight:750;
+      letter-spacing:.2px;
+    }
+
+    .tagline{
+      font-size:.95rem;
+      opacity:.85;
+      margin-bottom:20px;
+    }
+
+    /* ---------- REVIEWS HEADER ---------- */
+    .reviews-header{
+      margin:22px 0 26px;
+      padding:18px 16px;
+      border:1px solid #d4af37;
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+    }
+
+    .reviews-header h2{
+      margin:0 0 8px;
+      font-size:1.15rem;
+      color:#d4af37;
+      letter-spacing:.2px;
+    }
+
+    .google-rating{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+      font-size:.9rem;
+      margin-bottom:12px;
+      opacity:.95;
+    }
+
+    .stars{
+      color:#d4af37;
+      letter-spacing:1px;
+      font-size:1rem;
+    }
+
+    .review-card{
+      min-height:112px;
+      padding:14px;
+      border-radius:14px;
+      background:rgba(0,0,0,.40);
+      border:1px solid rgba(255,255,255,.10);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      transition:opacity .3s ease;
+    }
+
+    .review-text{
+      font-style:italic;
+      line-height:1.45;
+      margin:0 0 8px;
+      font-size:.96rem;
+    }
+
+    .review-name{
+      font-size:.85rem;
+      opacity:.85;
+      margin:0;
+    }
+
+    .review-actions{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+
+    .mini-btn{
+      padding:10px 16px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:750;
+      font-size:.85rem;
+      cursor:pointer;
+      border:1px solid #d4af37;
+      background:transparent;
+      color:#f5f5f5;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .mini-btn.gold{
+      background:#d4af37;
+      color:#000;
+      border-color:#d4af37;
+    }
+
+    /* ---------- MAIN BUTTONS ---------- */
+    .main-btn{
+      display:block;
+      padding:16px;
+      margin:12px 0;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:750;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .primary{
+      background:linear-gradient(135deg,#d4af37,#b8962e);
+      color:#000;
+    }
+
+    .secondary{
+      border:1px solid #d4af37;
+      color:#f5f5f5;
+      background:transparent;
+    }
+
+    .note{
+      margin-top:18px;
+      font-size:.9rem;
+      opacity:.78;
+      line-height:1.55;
+    }
+
+    footer{
+      margin-top:34px;
+      font-size:.8rem;
+      opacity:.6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="bwa-logo.png" alt="Beauty With Attitude Logo" onerror="this.style.display='none'">
     </div>
 
-    <div class="review-card">
-      <p class="review-text">“Aletta is absolutely lovely, a true professional, and goes above and beyond to make you feel comfortable and relaxed. Highly recommend her for anybody needing some pampering.”</p>
-      <p class="review-name">— P &amp; J Berry</p>
+    <h1>Beauty With Attitude</h1>
+    <div class="tagline">Muscle Therapy · Beauty Treatments</div>
+
+    <!-- ⭐ REVIEWS HEADER -->
+    <div class="reviews-header">
+      <h2>Client Reviews ⭐</h2>
+
+      <div class="google-rating">
+        <span class="stars">★★★★★</span>
+        <span><strong>5.0</strong> on Google</span>
+      </div>
+
+      <div class="review-card" id="reviewCard">
+        <p class="review-text" id="reviewText"></p>
+        <p class="review-name" id="reviewName"></p>
+      </div>
+
+      <div class="review-actions">
+        <a class="mini-btn gold"
+           href="https://share.google/jTuRzpw8XoKG2U5Oz"
+           target="_blank" rel="noopener">
+          Read all reviews
+        </a>
+
+        <button class="mini-btn" id="nextReview" type="button">
+          Next
+        </button>
+      </div>
     </div>
 
-    <div class="review-card">
-      <p class="review-text">“Beauty With Attitude is amazing. Aletta is very passionate and it shows. I’ve had a G5 massage and OMG — I feel amazing. Wouldn’t go anywhere else.”</p>
-      <p class="review-name">— Tracey Crowther</p>
+    <!-- MAIN APP ACTIONS -->
+    <a class="main-btn primary"
+       href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
+       target="_blank" rel="noopener">
+      Request an Appointment
+    </a>
+
+    <a class="main-btn secondary"
+       href="https://wa.me/6421333030"
+       target="_blank" rel="noopener">
+      WhatsApp 021 333 030
+    </a>
+
+    <a class="main-btn secondary"
+       href="https://www.facebook.com/beautywithattitude.bwa"
+       target="_blank" rel="noopener">
+      Visit Facebook Page
+    </a>
+
+    <div class="note">
+      Appointments are by request so I can confirm the best available time for you.
     </div>
 
-    <div class="review-card">
-      <p class="review-text">“Aletta is so amazing at what she does. I’ve been twice now and she always makes me feel comfortable and at ease. Favourite new spot.”</p>
-      <p class="review-name">— Erana Rameka</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“Phinjectors fillers for marionette lines — I was nervous, but Aletta made me feel at ease. Beautiful, peaceful surroundings and the procedure was painless. Noticed a difference straight after and very pleased with the results.”</p>
-      <p class="review-name">— Claire Tuiasau</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“The relax massage was the BEST ever. Aletta makes people feel welcome, comfortable and goes out of her way to make you feel special. Can’t wait for next time.”</p>
-      <p class="review-name">— Laura Hunter</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“A real gem of a place. After years of pain, my sessions with Aletta finally put my life back on track.”</p>
-      <p class="review-name">— Jo Lawton</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“Just wonderful! Beautiful, clean premises and lovely farm atmosphere. Aletta knows what she’s doing and genuinely cares. I left feeling refreshed and pampered — highly recommend.”</p>
-      <p class="review-name">— Antonia Rosedale</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“I had appointments for waxing and massage with Aletta, and nails with Shakira while visiting from out of town. What a great find — both amazing and the quality of the services was excellent. Highly recommend.”</p>
-      <p class="review-name">— Kathryn Woodfine</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“Aletta has a great heart, healing hands and is capable of positively uplifting and rejuvenating. I recommend both the beauty and massage service. I have travelled the world extensively — Aletta is rare and I would give 10 stars.”</p>
-      <p class="review-name">— Janine Ashton</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“Aletta knows your body better than you do. Her massages keep you moving pain-free with improved flexibility, and her facials leave your skin glowing and relaxed. Easily the best I’ve ever had.”</p>
-      <p class="review-name">— Rachel Pole</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“I would thoroughly recommend Aletta’s Beauty With Attitude Salon. Best facial ever — the ambience, soft relaxing music, high quality products and Aletta’s professionalism made it so worthwhile. I can’t wait to go back again.”</p>
-      <p class="review-name">— Michelle Morriss</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“Aletta is so talented — a wealth of knowledge on the human body. She helped immensely with my chronic back pain. Understanding, kind, and tailors the treatment.”</p>
-      <p class="review-name">— Hannah Owens</p>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">“Love Aletta’s work! Such a kind nurturing soul, full of knowledge about the human body. Highly recommend her services.”</p>
-      <p class="review-name">— Shakira Reilly</p>
-    </div>
-
+    <footer>© Beauty With Attitude</footer>
   </div>
 
-  <!-- Optional: link to your Google reviews page -->
-  <div class="reviews-cta">
-    <a class="reviews-btn" href="YOUR_GOOGLE_REVIEWS_LINK_HERE" target="_blank" rel="noopener">Read more reviews on Google</a>
-  </div>
-</section>
+  <script>
+    // Rotating reviews (you can add more later)
+    const reviews = [
+      { text: "Aletta delivers services of the highest quality and care. A true professional.", name: "— Raewyn Lipsey" },
+      { text: "Healing hands, a beautiful heart, and outstanding skill. I would give 10 stars.", name: "— Janine Ashton" },
+      { text: "Best facial I’ve ever had. Professional, relaxing, and worth every minute.", name: "— Michelle Morriss" },
+      { text: "Aletta genuinely cares about her clients. I always leave feeling refreshed.", name: "— Antonia Rosedale" },
+      { text: "Beauty With Attitude is amazing. Aletta’s passion really shows.", name: "— Tracey Crowther" }
+    ];
 
-<style>
-  .reviews { margin: 28px 0; padding: 20px; border-radius: 18px; background: rgba(255,255,255,0.06); }
-  .reviews h2 { margin: 0 0 6px; font-size: 22px; }
-  .reviews-sub { margin: 0 0 16px; opacity: 0.85; }
+    let i = 0;
+    const textEl = document.getElementById("reviewText");
+    const nameEl = document.getElementById("reviewName");
+    const cardEl = document.getElementById("reviewCard");
+    const nextBtn = document.getElementById("nextReview");
 
-  .review-grid {
-    display: grid;
-    gap: 12px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
+    function showReview() {
+      cardEl.style.opacity = "0";
+      setTimeout(() => {
+        textEl.textContent = "“" + reviews[i].text + "”";
+        nameEl.textContent = reviews[i].name;
+        cardEl.style.opacity = "1";
+      }, 180);
+    }
 
-  .review-card {
-    padding: 14px 14px 12px;
-    border-radius: 16px;
-    background: rgba(0,0,0,0.35);
-    border: 1px solid rgba(255,255,255,0.08);
-  }
+    function next() {
+      i = (i + 1) % reviews.length;
+      showReview();
+    }
 
-  .review-text { margin: 0 0 10px; line-height: 1.45; opacity: 0.95; }
-  .review-name { margin: 0; font-weight: 600; opacity: 0.9; }
+    showReview();
 
-  .reviews-cta { margin-top: 16px; display: flex; justify-content: center; }
-  .reviews-btn {
-    display: inline-block;
-    padding: 12px 16px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.15);
-  }
-</style>
+    // Auto-rotate every 6 seconds
+    let timer = setInterval(next, 6000);
+
+    // Manual next button (resets timer so it feels natural)
+    nextBtn.addEventListener("click", () => {
+      clearInterval(timer);
+      next();
+      timer = setInterval(next, 6000);
+    });
+  </script>
+</body>
+</html>
