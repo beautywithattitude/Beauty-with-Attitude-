@@ -1,256 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Beauty With Attitude</title>
-  <style>
-    :root{
-      --bg:#0b0b0d;
-      --card:#111114;
-      --text:#eaeaf0;
-      --muted:#b9b9c6;
-      --gold:#c9a24d;
-      --gold2:#e3c36a;
-      --border:rgba(201,162,77,.45);
-      --shadow: 0 18px 50px rgba(0,0,0,.55);
-      --radius:18px;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Beauty With Attitude</title>
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 50% -10%, rgba(201,162,77,.22), transparent 55%),
-                  radial-gradient(900px 500px at 20% 110%, rgba(201,162,77,.14), transparent 60%),
-                  var(--bg);
-      color:var(--text);
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px 14px;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-    .wrap{ width: min(430px, 100%); }
+.app {
+  width: 95%;
+  max-width: 420px;
+  text-align: center;
+}
 
-    .brand{
-      text-align:center;
-      margin-bottom:16px;
-    }
+.logo {
+  width: 140px;
+  margin: 10px auto 5px;
+  display: block;
+}
 
-    .logo{
-      width:72px;height:72px;
-      border-radius:50%;
-      border:1px solid var(--border);
-      box-shadow: var(--shadow);
-      object-fit:cover;
-      background:#0f0f12;
-    }
+h1 {
+  margin: 5px 0 0;
+  font-size: 26px;
+}
 
-    h1{
-      margin:14px 0 6px;
-      font-size:28px;
-      letter-spacing:.3px;
-    }
-    .tagline{
-      margin:0;
-      color:var(--muted);
-      font-size:13.5px;
-    }
+.subtitle {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
 
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
-    }
+.card {
+  border: 1px solid #caa64b;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
 
-    .reviews{
-      border:1px solid rgba(201,162,77,.35);
-      border-radius:14px;
-      padding:14px;
-      text-align:center;
-      background: rgba(255,255,255,.02);
-    }
-    .reviews h2{
-      margin:0 0 8px;
-      font-size:14px;
-      font-weight:650;
-      color:var(--gold2);
-      letter-spacing:.25px;
-    }
-    .stars{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      color:var(--muted);
-      font-size:13px;
-      margin-bottom:10px;
-    }
-    .quote{
-      margin:0;
-      padding:10px 10px;
-      font-style:italic;
-      color: #f1f1f6;
-      border-top:1px solid rgba(201,162,77,.25);
-      border-bottom:1px solid rgba(201,162,77,.25);
-    }
-    .quote small{
-      display:block;
-      margin-top:8px;
-      color:var(--muted);
-      font-style:normal;
-    }
+.review-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
 
-    .review-actions{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      margin-top:12px;
-      flex-wrap:wrap;
-    }
+.stars {
+  color: #caa64b;
+  font-size: 18px;
+}
 
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      width:100%;
-      padding:14px 14px;
-      margin-top:12px;
-      border-radius:14px;
-      border:1px solid rgba(201,162,77,.45);
-      background: rgba(255,255,255,.02);
-      color:var(--text);
-      text-decoration:none;
-      font-weight:650;
-      letter-spacing:.2px;
-      transition: transform .08s ease, background .15s ease, border-color .15s ease;
-      user-select:none;
-    }
-    .btn:hover{
-      background: rgba(201,162,77,.10);
-      border-color: rgba(201,162,77,.75);
-      transform: translateY(-1px);
-    }
+.review-text {
+  font-style: italic;
+  margin: 10px 0;
+}
 
-    .btn.primary{
-      background: linear-gradient(90deg, rgba(201,162,77,.95), rgba(227,195,106,.95));
-      color:#1a1206;
-      border-color: rgba(227,195,106,.9);
-      box-shadow: 0 14px 30px rgba(201,162,77,.18);
-    }
-    .btn.primary:hover{
-      transform: translateY(-1px);
-      filter: brightness(1.02);
-    }
+button, .btn {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #caa64b;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+}
 
-    .btn-row{
-      display:flex;
-      gap:10px;
-      margin-top:12px;
-    }
-    .btn-row .btn{
-      width: 50%;
-      margin-top:0;
-    }
+.btn.primary {
+  background: #caa64b;
+  color: #000;
+  border: none;
+  font-weight: bold;
+}
 
-    .footer{
-      margin-top:12px;
-      text-align:center;
-      color: rgba(185,185,198,.9);
-      font-size:12px;
-      line-height:1.4;
-    }
-    .footer a{ color: var(--gold2); text-decoration:none; }
-    .footer a:hover{ text-decoration:underline; }
+button:hover, .btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
 
-    .divider{
-      height:1px;
-      background: rgba(201,162,77,.25);
-      margin:14px 0 10px;
-    }
-
-  </style>
+.small {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 6px;
+}
+</style>
 </head>
 
 <body>
-  <main class="wrap">
-    <header class="brand">
-      <img class="logo" src="LOGO_URL_HERE" alt="Beauty With Attitude Logo" />
-      <h1>Beauty With Attitude</h1>
-      <p class="tagline">Muscle Therapy · Beauty Treatments</p>
-    </header>
+<div class="app">
 
-    <section class="card">
+  <!-- Logo from your website -->
+  <img class="logo"
+       src="https://beautywithattitude.co.nz/wp-content/uploads/2021/09/cropped-Beauty-With-Attitude-Logo.png"
+       alt="Beauty With Attitude Logo">
 
-      <!-- Reviews card -->
-      <div class="reviews" id="reviews">
-        <h2>Client Reviews ⭐</h2>
-        <div class="stars">★★★★★ <strong>5.0</strong> on Google</div>
+  <h1>Beauty With Attitude</h1>
+  <div class="subtitle">Muscle Therapy · Beauty Treatments</div>
 
-        <!-- You can change this quote any time -->
-        <p class="quote">
-          “Best facial I’ve ever had. So professional.”
-          <small>— Michelle</small>
-        </p>
+  <!-- Reviews -->
+  <div class="card">
+    <div class="review-title">Client Reviews ⭐</div>
+    <div class="stars">★★★★★ 5.0 on Google</div>
+    <div id="review" class="review-text">
+      “Best facial I’ve ever had. So professional!”
+      <br>— Michelle
+    </div>
+    <a class="btn" href="https://g.page/r/CWbB5e0h2c6dEBM/review" target="_blank">
+      Read all reviews
+    </a>
+  </div>
 
-        <div class="review-actions">
-          <a class="btn" style="max-width:180px;margin-top:0" href="REVIEWS_URL_HERE" target="_blank" rel="noopener">
-            Read all reviews
-          </a>
-          <button class="btn" style="max-width:120px;margin-top:0" type="button" onclick="nextQuote()">
-            Next
-          </button>
-        </div>
-      </div>
+  <!-- Buttons -->
 
-      <div class="divider"></div>
+  <!-- Appointment form -->
+  <a class="btn primary"
+     href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
+     target="_blank">
+     Request an Appointment
+  </a>
 
-      <!-- Main actions -->
-      <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header" target="_blank" rel="noopener">
-        Request an Appointment
-      </a>
+  <!-- WhatsApp -->
+  <a class="btn"
+     href="https://wa.me/6421333030"
+     target="_blank">
+     WhatsApp 021 333 030
+  </a>
 
-      <a class="btn" href="https://wa.me/6421333030" target="_blank" rel="noopener">
-        WhatsApp 021 333 030
-      </a>
+  <!-- Facebook -->
+  <a class="btn"
+     href="https://www.facebook.com/beautywithattitude.bwa"
+     target="_blank">
+     Visit Facebook Page
+  </a>
 
-      <a class="btn" href="FACEBOOK_URL_HERE" target="_blank" rel="noopener">
-        Visit Facebook Page
-      </a>
+  <!-- Gift voucher form -->
+  <a class="btn"
+     href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header"
+     target="_blank">
+     Buy a Gift Voucher
+  </a>
 
-      <!-- Gift Voucher opens the SAME form (or you can paste a voucher-specific form link if you have one) -->
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header" target="_blank" rel="noopener">
-        Buy a Gift Voucher
-      </a>
+  <div class="small">
+    Need help? Message us on WhatsApp.
+  </div>
 
-      <p class="footer">
-        Need help? Message us on <a href="https://wa.me/6421333030" target="_blank" rel="noopener">WhatsApp</a>.
-      </p>
-    </section>
-  </main>
-
-  <script>
-    // Rotate featured review quotes
-    const quotes = [
-      { text: "Best facial I’ve ever had. So professional.", name: "Michelle" },
-      { text: "Aletta delivers services of the highest quality and care.", name: "Raewyn" },
-      { text: "A great heart, healing hands… I would give 10 stars.", name: "Janine" },
-      { text: "So talented… helped immensely with my chronic back pain.", name: "Hannah" }
-    ];
-
-    let qIndex = 0;
-
-    function nextQuote() {
-      qIndex = (qIndex + 1) % quotes.length;
-      const q = quotes[qIndex];
-      const quoteEl = document.querySelector(".quote");
-      quoteEl.innerHTML = `“${q.text}”<small>— ${q.name}</small>`;
-    }
-  </script>
+</div>
 </body>
 </html>
