@@ -4,294 +4,253 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Beauty With Attitude</title>
-  <meta name="theme-color" content="#000000" />
-
   <style>
-    :root { color-scheme: dark; }
+    :root{
+      --bg:#0b0b0d;
+      --card:#111114;
+      --text:#eaeaf0;
+      --muted:#b9b9c6;
+      --gold:#c9a24d;
+      --gold2:#e3c36a;
+      --border:rgba(201,162,77,.45);
+      --shadow: 0 18px 50px rgba(0,0,0,.55);
+      --radius:18px;
+    }
 
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      background:linear-gradient(180deg,#0b0b0b,#1a1a1a);
-      color:#f5f5f5;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(201,162,77,.22), transparent 55%),
+                  radial-gradient(900px 500px at 20% 110%, rgba(201,162,77,.14), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px 14px;
+    }
+
+    .wrap{ width: min(430px, 100%); }
+
+    .brand{
       text-align:center;
+      margin-bottom:16px;
     }
 
-    .container{
-      max-width:440px;
-      margin:0 auto;
-      padding:32px 18px 70px;
-    }
-
-    .logo img{
-      width:130px;
-      margin:20px auto 10px;
-      display:block;
-      filter:drop-shadow(0 10px 22px rgba(0,0,0,.35));
+    .logo{
+      width:72px;height:72px;
+      border-radius:50%;
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      object-fit:cover;
+      background:#0f0f12;
     }
 
     h1{
-      margin:6px 0 4px;
-      font-weight:750;
-      letter-spacing:.2px;
+      margin:14px 0 6px;
+      font-size:28px;
+      letter-spacing:.3px;
     }
-
     .tagline{
-      font-size:.95rem;
-      opacity:.85;
-      margin-bottom:20px;
-    }
-
-    .reviews-header{
-      margin:22px 0 26px;
-      padding:18px 16px;
-      border:1px solid #d4af37;
-      border-radius:18px;
-      background:rgba(255,255,255,.04);
-    }
-
-    .reviews-header h2{
-      margin:0 0 8px;
-      font-size:1.15rem;
-      color:#d4af37;
-    }
-
-    .google-rating{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:8px;
-      font-size:.9rem;
-      margin-bottom:12px;
-    }
-
-    .stars{
-      color:#d4af37;
-      letter-spacing:1px;
-      font-size:1rem;
-    }
-
-    .review-card{
-      min-height:110px;
-      padding:14px;
-      border-radius:14px;
-      background:rgba(0,0,0,.4);
-      border:1px solid rgba(255,255,255,.1);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      transition:opacity .3s ease;
-    }
-
-    .review-text{
-      font-style:italic;
-      margin:0 0 8px;
-    }
-
-    .review-name{
-      font-size:.85rem;
-      opacity:.85;
       margin:0;
+      color:var(--muted);
+      font-size:13.5px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+
+    .reviews{
+      border:1px solid rgba(201,162,77,.35);
+      border-radius:14px;
+      padding:14px;
+      text-align:center;
+      background: rgba(255,255,255,.02);
+    }
+    .reviews h2{
+      margin:0 0 8px;
+      font-size:14px;
+      font-weight:650;
+      color:var(--gold2);
+      letter-spacing:.25px;
+    }
+    .stars{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:10px;
+    }
+    .quote{
+      margin:0;
+      padding:10px 10px;
+      font-style:italic;
+      color: #f1f1f6;
+      border-top:1px solid rgba(201,162,77,.25);
+      border-bottom:1px solid rgba(201,162,77,.25);
+    }
+    .quote small{
+      display:block;
+      margin-top:8px;
+      color:var(--muted);
+      font-style:normal;
     }
 
     .review-actions{
       display:flex;
-      justify-content:center;
       gap:10px;
+      justify-content:center;
       margin-top:12px;
       flex-wrap:wrap;
     }
 
-    .mini-btn{
-      padding:10px 16px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:.85rem;
-      border:1px solid #d4af37;
-      background:transparent;
-      color:#f5f5f5;
-    }
-
-    .mini-btn.gold{
-      background:#d4af37;
-      color:#000;
-    }
-
-    .main-btn{
-      display:block;
-      padding:16px;
-      margin:12px 0;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:700;
-      border:1px solid #d4af37;
-      background:transparent;
-      color:#f5f5f5;
-    }
-
-    .primary{
-      background:linear-gradient(135deg,#d4af37,#b8962e);
-      color:#000;
-      border:none;
-    }
-
-    footer{
-      margin-top:30px;
-      font-size:.8rem;
-      opacity:.6;
-    }
-
-    /* modal */
-    .modal-backdrop{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.7);
-      display:none;
+    .btn{
+      display:flex;
       align-items:center;
       justify-content:center;
-      padding:16px;
-    }
-
-    .modal{
-      background:#111;
-      border:1px solid #d4af37;
-      border-radius:16px;
-      padding:18px;
-      max-width:420px;
+      gap:10px;
       width:100%;
-      text-align:left;
+      padding:14px 14px;
+      margin-top:12px;
+      border-radius:14px;
+      border:1px solid rgba(201,162,77,.45);
+      background: rgba(255,255,255,.02);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:650;
+      letter-spacing:.2px;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    .btn:hover{
+      background: rgba(201,162,77,.10);
+      border-color: rgba(201,162,77,.75);
+      transform: translateY(-1px);
     }
 
-    .modal h3{
-      color:#d4af37;
+    .btn.primary{
+      background: linear-gradient(90deg, rgba(201,162,77,.95), rgba(227,195,106,.95));
+      color:#1a1206;
+      border-color: rgba(227,195,106,.9);
+      box-shadow: 0 14px 30px rgba(201,162,77,.18);
+    }
+    .btn.primary:hover{
+      transform: translateY(-1px);
+      filter: brightness(1.02);
+    }
+
+    .btn-row{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+    }
+    .btn-row .btn{
+      width: 50%;
       margin-top:0;
     }
 
-    .pay-row{
-      margin-bottom:10px;
-      background:rgba(255,255,255,.05);
-      padding:10px;
-      border-radius:10px;
+    .footer{
+      margin-top:12px;
+      text-align:center;
+      color: rgba(185,185,198,.9);
+      font-size:12px;
+      line-height:1.4;
+    }
+    .footer a{ color: var(--gold2); text-decoration:none; }
+    .footer a:hover{ text-decoration:underline; }
+
+    .divider{
+      height:1px;
+      background: rgba(201,162,77,.25);
+      margin:14px 0 10px;
     }
 
-    .label{
-      font-size:.75rem;
-      opacity:.7;
-      margin:0 0 4px;
-    }
-
-    .value{
-      margin:0;
-      font-weight:700;
-      word-break:break-all;
-    }
-
-    .modal button{
-      margin-top:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      font-weight:700;
-      border:1px solid #d4af37;
-      background:#d4af37;
-      color:#000;
-      cursor:pointer;
-    }
   </style>
 </head>
 
 <body>
-<div class="container">
+  <main class="wrap">
+    <header class="brand">
+      <img class="logo" src="LOGO_URL_HERE" alt="Beauty With Attitude Logo" />
+      <h1>Beauty With Attitude</h1>
+      <p class="tagline">Muscle Therapy · Beauty Treatments</p>
+    </header>
 
-  <div class="logo">
-    <img src="bwa-logo.png" alt="Beauty With Attitude Logo">
-  </div>
+    <section class="card">
 
-  <h1>Beauty With Attitude</h1>
-  <div class="tagline">Muscle Therapy · Beauty Treatments</div>
+      <!-- Reviews card -->
+      <div class="reviews" id="reviews">
+        <h2>Client Reviews ⭐</h2>
+        <div class="stars">★★★★★ <strong>5.0</strong> on Google</div>
 
-  <div class="reviews-header">
-    <h2>Client Reviews ⭐</h2>
-    <div class="google-rating">
-      <span class="stars">★★★★★</span>
-      <span><strong>5.0</strong> on Google</span>
-    </div>
+        <!-- You can change this quote any time -->
+        <p class="quote">
+          “Best facial I’ve ever had. So professional.”
+          <small>— Michelle</small>
+        </p>
 
-    <div class="review-card" id="reviewCard">
-      <p class="review-text" id="reviewText"></p>
-      <p class="review-name" id="reviewName"></p>
-    </div>
+        <div class="review-actions">
+          <a class="btn" style="max-width:180px;margin-top:0" href="REVIEWS_URL_HERE" target="_blank" rel="noopener">
+            Read all reviews
+          </a>
+          <button class="btn" style="max-width:120px;margin-top:0" type="button" onclick="nextQuote()">
+            Next
+          </button>
+        </div>
+      </div>
 
-    <div class="review-actions">
-      <a class="mini-btn gold" href="https://share.google/jTuRzpw8XoKG2U5Oz" target="_blank">Read all reviews</a>
-      <button class="mini-btn" id="nextReview">Next</button>
-    </div>
-  </div>
+      <div class="divider"></div>
 
-  <a class="main-btn primary"
-     href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
-     target="_blank">Request an Appointment</a>
+      <!-- Main actions -->
+      <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header" target="_blank" rel="noopener">
+        Request an Appointment
+      </a>
 
-  <button class="main-btn" id="payBtn">Bank Transfer Payment</button>
+      <a class="btn" href="https://wa.me/6421333030" target="_blank" rel="noopener">
+        WhatsApp 021 333 030
+      </a>
 
-  <a class="main-btn" href="https://wa.me/6421333030" target="_blank">WhatsApp 021 333 030</a>
-  <a class="main-btn" href="https://www.facebook.com/beautywithattitude.bwa" target="_blank">Visit Facebook Page</a>
-  <a class="main-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header" target="_blank">Buy a Gift Voucher</a>
+      <a class="btn" href="FACEBOOK_URL_HERE" target="_blank" rel="noopener">
+        Visit Facebook Page
+      </a>
 
-  <footer>© Beauty With Attitude</footer>
-</div>
+      <!-- Gift Voucher opens the SAME form (or you can paste a voucher-specific form link if you have one) -->
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header" target="_blank" rel="noopener">
+        Buy a Gift Voucher
+      </a>
 
-<div class="modal-backdrop" id="modal">
-  <div class="modal">
-    <h3>Bank Transfer Details</h3>
+      <p class="footer">
+        Need help? Message us on <a href="https://wa.me/6421333030" target="_blank" rel="noopener">WhatsApp</a>.
+      </p>
+    </section>
+  </main>
 
-    <div class="pay-row">
-      <p class="label">Account Name</p>
-      <p class="value">Beauty with Attitude Limited</p>
-    </div>
+  <script>
+    // Rotate featured review quotes
+    const quotes = [
+      { text: "Best facial I’ve ever had. So professional.", name: "Michelle" },
+      { text: "Aletta delivers services of the highest quality and care.", name: "Raewyn" },
+      { text: "A great heart, healing hands… I would give 10 stars.", name: "Janine" },
+      { text: "So talented… helped immensely with my chronic back pain.", name: "Hannah" }
+    ];
 
-    <div class="pay-row">
-      <p class="label">Account Number</p>
-      <p class="value" id="accNum">06-0193-0781391-00</p>
-    </div>
+    let qIndex = 0;
 
-    <div class="pay-row">
-      <p class="label">Reference</p>
-      <p class="value">Your name</p>
-    </div>
-
-    <button onclick="copyAcc()">Copy Account Number</button>
-    <button onclick="closeModal()">Close</button>
-  </div>
-</div>
-
-<script>
-const reviews=[
-  {text:"Aletta delivers services of the highest quality and care.",name:"— Raewyn"},
-  {text:"Healing hands and outstanding skill. Highly recommend.",name:"— Janine"},
-  {text:"Best facial I’ve ever had. So professional.",name:"— Michelle"},
-  {text:"I always leave feeling refreshed and cared for.",name:"— Antonia"},
-  {text:"Amazing experience every time.",name:"— Tracey"}
-];
-
-let i=0;
-function show(){
-  document.getElementById("reviewText").textContent="“"+reviews[i].text+"”";
-  document.getElementById("reviewName").textContent=reviews[i].name;
-}
-show();
-setInterval(()=>{i=(i+1)%reviews.length;show();},6000);
-document.getElementById("nextReview").onclick=()=>{i=(i+1)%reviews.length;show();};
-
-const modal=document.getElementById("modal");
-document.getElementById("payBtn").onclick=()=>modal.style.display="flex";
-function closeModal(){modal.style.display="none";}
-modal.onclick=e=>{if(e.target===modal)closeModal();};
-
-function copyAcc(){
-  navigator.clipboard.writeText(document.getElementById("accNum").textContent);
-  alert("Account number copied");
-}
-</script>
+    function nextQuote() {
+      qIndex = (qIndex + 1) % quotes.length;
+      const q = quotes[qIndex];
+      const quoteEl = document.querySelector(".quote");
+      quoteEl.innerHTML = `“${q.text}”<small>— ${q.name}</small>`;
+    }
+  </script>
 </body>
 </html>
