@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Beauty With Attitude</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #0c0c0c;
-    color: #fff;
+    background: #0b0b0b;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -21,42 +21,46 @@ body {
 }
 
 .logo {
-    width: 160px;
-    margin-top: 10px;
+    width: 120px;
     margin-bottom: 10px;
 }
 
 h1 {
-    margin: 5px 0;
-    font-size: 26px;
+    margin: 10px 0 5px;
+    font-size: 28px;
 }
 
 .subtitle {
-    color: #ccc;
-    margin-bottom: 20px;
+    color: #c7a44c;
+    margin-bottom: 25px;
 }
 
 .review-box {
-    border: 1px solid #c9a44c;
-    border-radius: 12px;
-    padding: 15px;
+    border: 1px solid #c7a44c;
+    border-radius: 14px;
+    padding: 18px;
     margin-bottom: 20px;
 }
 
-.review-title {
-    color: #c9a44c;
-    font-weight: bold;
-    margin-bottom: 5px;
+.review-box h3 {
+    margin-top: 0;
+    color: #c7a44c;
 }
 
 .stars {
-    color: #c9a44c;
+    color: #c7a44c;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
 .review-text {
     font-style: italic;
-    margin-bottom: 10px;
+    margin: 10px 0;
+}
+
+.review-author {
+    opacity: 0.8;
+    margin-bottom: 15px;
 }
 
 .button {
@@ -64,26 +68,31 @@ h1 {
     width: 100%;
     padding: 14px;
     margin: 10px 0;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
 }
 
 .primary {
-    background: #c9a44c;
-    color: #000;
+    background: #c7a44c;
+    color: #000000;
 }
 
 .outline {
-    border: 1px solid #c9a44c;
-    color: #fff;
+    border: 1px solid #c7a44c;
+    color: #ffffff;
 }
 
-.small-note {
-    margin-top: 15px;
+.small {
+    font-size: 14px;
+    padding: 10px;
+}
+
+.footer {
+    margin-top: 20px;
     font-size: 13px;
-    color: #bbb;
+    opacity: 0.7;
 }
 </style>
 </head>
@@ -100,20 +109,23 @@ h1 {
 
     <!-- REVIEWS -->
     <div class="review-box">
-        <div class="review-title">Client Reviews ⭐</div>
+        <h3>Client Reviews ⭐</h3>
         <div class="stars">★★★★★ 5.0 on Google</div>
         <div class="review-text">
             “Best facial I’ve ever had. So professional!”
-            <br>— Michelle
         </div>
-        <a class="button outline" 
-           href="https://share.google/jTuRzpw8XoKG2U5Oz" 
-           target="_blank">Read all reviews</a>
+        <div class="review-author">— Michelle</div>
+
+        <a class="button outline small"
+           href="https://share.google/jTuRzpw8XoKG2U5Oz"
+           target="_blank">
+           Read all reviews
+        </a>
     </div>
 
     <!-- REQUEST APPOINTMENT -->
     <a class="button primary"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header"
+       href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
        target="_blank">
        Request an Appointment
     </a>
@@ -132,14 +144,14 @@ h1 {
        Visit Facebook Page
     </a>
 
-    <!-- GIFT VOUCHER -->
+    <!-- BUY VOUCHER -->
     <a class="button outline"
        href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header"
        target="_blank">
        Buy a Gift Voucher
     </a>
 
-    <div class="small-note">
+    <div class="footer">
         Need help? Message us on WhatsApp.
     </div>
 
