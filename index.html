@@ -1,157 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta charset="UTF-8">
 <title>Beauty With Attitude</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0c0c0c;
+    color: #fff;
+    text-align: center;
 }
 
-.app {
-  width: 95%;
-  max-width: 420px;
-  text-align: center;
+.container {
+    max-width: 420px;
+    margin: auto;
+    padding: 20px;
 }
 
 .logo {
-  width: 140px;
-  margin: 10px auto 5px;
-  display: block;
+    width: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 h1 {
-  margin: 5px 0 0;
-  font-size: 26px;
+    margin: 5px 0;
+    font-size: 26px;
 }
 
 .subtitle {
-  color: #ccc;
-  font-size: 14px;
-  margin-bottom: 15px;
+    color: #ccc;
+    margin-bottom: 20px;
 }
 
-.card {
-  border: 1px solid #caa64b;
-  border-radius: 12px;
-  padding: 15px;
-  margin-bottom: 15px;
+.review-box {
+    border: 1px solid #c9a44c;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
 .review-title {
-  font-weight: bold;
-  margin-bottom: 5px;
+    color: #c9a44c;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .stars {
-  color: #caa64b;
-  font-size: 18px;
+    color: #c9a44c;
+    margin-bottom: 10px;
 }
 
 .review-text {
-  font-style: italic;
-  margin: 10px 0;
+    font-style: italic;
+    margin-bottom: 10px;
 }
 
-button, .btn {
-  width: 100%;
-  padding: 14px;
-  margin: 8px 0;
-  border-radius: 10px;
-  border: 1px solid #caa64b;
-  background: transparent;
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
-  display: inline-block;
+.button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.btn.primary {
-  background: #caa64b;
-  color: #000;
-  border: none;
-  font-weight: bold;
+.primary {
+    background: #c9a44c;
+    color: #000;
 }
 
-button:hover, .btn:hover {
-  opacity: 0.9;
-  cursor: pointer;
+.outline {
+    border: 1px solid #c9a44c;
+    color: #fff;
 }
 
-.small {
-  font-size: 12px;
-  color: #aaa;
-  margin-top: 6px;
+.small-note {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #bbb;
 }
 </style>
 </head>
 
 <body>
-<div class="app">
+<div class="container">
 
-  <!-- Logo from your website -->
-  <img class="logo"
-       src="https://beautywithattitude.co.nz/wp-content/uploads/2021/09/cropped-Beauty-With-Attitude-Logo.png"
-       alt="Beauty With Attitude Logo">
+    <!-- LOGO -->
+    <img src="bwa-logo.png" alt="Beauty With Attitude Logo" class="logo">
 
-  <h1>Beauty With Attitude</h1>
-  <div class="subtitle">Muscle Therapy · Beauty Treatments</div>
+    <!-- TITLE -->
+    <h1>Beauty With Attitude</h1>
+    <div class="subtitle">Muscle Therapy · Beauty Treatments</div>
 
-  <!-- Reviews -->
-  <div class="card">
-    <div class="review-title">Client Reviews ⭐</div>
-    <div class="stars">★★★★★ 5.0 on Google</div>
-    <div id="review" class="review-text">
-      “Best facial I’ve ever had. So professional!”
-      <br>— Michelle
+    <!-- REVIEWS -->
+    <div class="review-box">
+        <div class="review-title">Client Reviews ⭐</div>
+        <div class="stars">★★★★★ 5.0 on Google</div>
+        <div class="review-text">
+            “Best facial I’ve ever had. So professional!”
+            <br>— Michelle
+        </div>
+        <a class="button outline" 
+           href="https://share.google/jTuRzpw8XoKG2U5Oz" 
+           target="_blank">Read all reviews</a>
     </div>
-    <a class="btn" href="https://g.page/r/CWbB5e0h2c6dEBM/review" target="_blank">
-      Read all reviews
+
+    <!-- REQUEST APPOINTMENT -->
+    <a class="button primary"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header"
+       target="_blank">
+       Request an Appointment
     </a>
-  </div>
 
-  <!-- Buttons -->
+    <!-- WHATSAPP -->
+    <a class="button outline"
+       href="https://wa.me/6421333030"
+       target="_blank">
+       WhatsApp 021 333 030
+    </a>
 
-  <!-- Appointment form -->
-  <a class="btn primary"
-     href="https://docs.google.com/forms/d/e/1FAIpQLScqe9BVGTuGcZ4xZUm4CuCovvua_0UJFKseygJa5Fc1sl4w0Q/viewform?usp=header"
-     target="_blank">
-     Request an Appointment
-  </a>
+    <!-- FACEBOOK -->
+    <a class="button outline"
+       href="https://www.facebook.com/beautywithattitude.bwa"
+       target="_blank">
+       Visit Facebook Page
+    </a>
 
-  <!-- WhatsApp -->
-  <a class="btn"
-     href="https://wa.me/6421333030"
-     target="_blank">
-     WhatsApp 021 333 030
-  </a>
+    <!-- GIFT VOUCHER -->
+    <a class="button outline"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header"
+       target="_blank">
+       Buy a Gift Voucher
+    </a>
 
-  <!-- Facebook -->
-  <a class="btn"
-     href="https://www.facebook.com/beautywithattitude.bwa"
-     target="_blank">
-     Visit Facebook Page
-  </a>
-
-  <!-- Gift voucher form -->
-  <a class="btn"
-     href="https://docs.google.com/forms/d/e/1FAIpQLSfoXK-mzOhhNCldHvaZ0RpNcL2dVntNFCGhM4fyd-zb-mCslw/viewform?usp=header"
-     target="_blank">
-     Buy a Gift Voucher
-  </a>
-
-  <div class="small">
-    Need help? Message us on WhatsApp.
-  </div>
+    <div class="small-note">
+        Need help? Message us on WhatsApp.
+    </div>
 
 </div>
 </body>
