@@ -56,6 +56,10 @@ h1 {
 
 .review-text {
   font-style:italic;
+  margin-bottom:6px;
+}
+
+.review-author {
   margin-bottom:12px;
 }
 
@@ -115,9 +119,9 @@ h1 {
   <div class="review-box">
     <div class="review-title">Client Reviews ⭐</div>
     <div class="stars">★★★★★ 5.0 on Google</div>
-    <div class="review-text">
-      “Best facial I’ve ever had. So professional!”<br>— Michelle
-    </div>
+
+    <div id="reviewText" class="review-text"></div>
+    <div id="reviewAuthor" class="review-author"></div>
 
     <div class="reviews-center">
       <a class="reviews-btn"
@@ -127,8 +131,6 @@ h1 {
       </a>
     </div>
   </div>
-
-  <!-- BUTTONS -->
 
   <!-- APPOINTMENT FORM -->
   <a class="button primary"
@@ -163,5 +165,34 @@ h1 {
   </div>
 
 </div>
+
+<script>
+const reviews = [
+  {
+    text: "“Best facial I’ve ever had. So professional!”",
+    author: "— Michelle"
+  },
+  {
+    text: "“Absolutely amazing massage, I can move without pain again.”",
+    author: "— Sarah"
+  },
+  {
+    text: "“Professional, caring and incredibly knowledgeable.”",
+    author: "— Karen"
+  }
+];
+
+let index = 0;
+
+function rotateReview() {
+  document.getElementById("reviewText").innerText = reviews[index].text;
+  document.getElementById("reviewAuthor").innerText = reviews[index].author;
+  index = (index + 1) % reviews.length;
+}
+
+rotateReview();              // show first review immediately
+setInterval(rotateReview, 4000); // change every 4 seconds
+</script>
+
 </body>
 </html>
